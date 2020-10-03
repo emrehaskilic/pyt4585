@@ -1,87 +1,152 @@
-# Telefon Rehberi
-
-#Kullanici uygulamayı calıştırdığında seçecekler sunulacak
-
-################ Telefon Rehberi ################ 
-# Kayıt Eklemek için 1
-# Kayıt Düzenlemek için 2
-# Kayıt Silmek için 3
-# Kayıt listesi için 4
-# Arama için 5
-#Lütfen bir deger giriniz: ()
-# Adı              :   
-# Soyadı           :
-# Mail Adresi      :
-# Telefon Numarasi :
-# 
-# Yeni bir işlem yapmak istiyor musunuz (Y/N):
-# Düzenleme yaparken Örneğin İd yi İsmi Soyisimi Tel ve Maili düzenleyebilmemiz lazım
-#  
-##################################################
 print("""
-*******************************
-*                             *
-*******TELEFON REHBERİ*********  
-*                             *
-*******************************
-!KAYIT EKLEMEK İÇİN 1'i
-!KAYIT DÜZENLEMEK İÇİN 2'yi
-!KAYIT SİLMEK İÇİN 3'ü
-!KAYIT LİSTESİ İÇİN 4'ü
-!REHBERDE ARAMA YAPMAK İÇİN 5'i
--------- tuşlayınız---------
+*****************
+*TELEFON REHBERİ*
+*****************
+------------------------------
+- Kayıt Eklemek İçin    : 1 - 
+- Kayıt Güncellemek İçin: 2 - 
+- Kayıt Listelemek için : 3 -
+- Kayıt Aramak için     : 4 -
+- Kayıt Silmek için     : 5 -
+------------------------------
+Tuşlayınız...
 """)
 
-
-
-deger = input("Lütfen Yapmak İstediginiz islemi Seciniz:")
-
 rehber = [
-    {
-        "id"   : "0" ,
-        "isim" : "Emre" ,
-        "soyisim": "Haskılıç" ,
-        "mail": "emre.haskilic@gmail.com" ,
-        "telefon" : "+905059796816",
+             {
+                "Id":1,
+                "İsim":"Emre",
+                "Soyisim" :"Haskılıç",
+                "Telefon" :"+905059796816",
+                "Mail" : "emrehaskilic1@gmail.com"
+            }
+              
+        
+]
 
-    }
+i = 1
+while i == 1:  #KİŞİ EKLEME SEÇENEĞİ
+    soru = input("Lütfen yapmak istediğiniz işlemi seçiniz:")
 
-         ]
+    if soru == "1":
+        id = len(rehber)+1      
+        isim = input("İsim:")
+        soyisim = input("Soyisim:")
+        telefon = input("Telefon:")
+        mail = input("Mail:")
+         
+        rehber.append(
+                    {
+                        "Id":id,
+                        "İsim" :isim ,
+                        "Soyisim" :soyisim,
+                        "Telefon": telefon,
+                        "Mail": mail
+
+                    }
+            )
+
+        evethayir = str(input("kayıt başarıyla eklendi.✓ \n Devam etmek istiyor musunuz?:(E/H)"))
+        if evethayir.upper() == "H":
+            print("""
+            *************
+            * Güle Güle *
+            *************
+                """) 
+            break 
+
+    elif soru == "3": #KİŞİ LİSTELEME SEÇENEĞİ
+        for kisi in rehber:
+            print("ID:",kisi["Id"])
+            print("İsim:",kisi["İsim"])
+            print("Soyisim:",kisi["Soyisim"])
+            print("Telefon:",kisi["Telefon"])
+            print("Mail:",kisi["Mail"])
+
+        evethayir = str(input("Devam etmek istiyor musunuz?:(E/H)"))
+        if evethayir.upper() == "H":
+            print("""
+            *************
+            * Güle Güle *
+            *************
+                """)  
+            break
+    elif soru == "5": #KİŞİ SİLME SEÇENEĞİ
+        for kisi in rehber:
+            print("ID:",kisi["Id"])
+            print("İsim:",kisi["İsim"])
+            print("Soyisim:",kisi["Soyisim"])
+            print("Telefon:",kisi["Telefon"])
+            print("Mail:",kisi["Mail"])
+        
+            index = int(input("Silmek istediğiniz idyi seçiniz:"))
+            
+            id = index -1
+            rehber.pop(id)
+            print("Kayıt Basarıyla Silindi ✓")
+            evethayir = str(input("\n Devam etmek istiyor musunuz?:(E/H)"))
+            if evethayir.upper() == "H":
+                print("""
+            *************
+            * Güle Güle *
+            *************
+                """)  
+                break
+    elif soru == "2":
+        for kisi in rehber:
+            print("ID:",kisi["Id"])
+            print("İsim:",kisi["İsim"])
+            print("Soyisim:",kisi["Soyisim"])
+            print("Telefon:",kisi["Telefon"])
+            print("Mail:",kisi["Mail"])
+            index = int(input("Güncellemek istediğiniz idyi seçiniz:"))
+            id = index -1
 
 
+            
+           
+            
+            isim = input(kisi["İsim"])
+            soyisim = input( kisi["Soyisim"])
+            telefon = input(kisi["Telefon"])
+            mail = input(kisi["Mail"])
+        
+            kisi.update(
+                    {
+                        
+                        "İsim" :isim,
+                        "Soyisim" :soyisim,
+                        "Telefon": telefon,
+                        "Mail": mail
 
-
-isim = input("İsim:")
-soyisim = input("Soyisim:")
-mail = input("Mail:")
-telefon = input("Telefon No:")
-id =len(rehber)
-
-
-if deger == 1:
-    
-
-    rehber.append(
-{ 
-    "id":id,
-    "isim":isim,
-    "soyisim":soyisim,
-    "mail":mail,
-    "telefon":telefon
-}
-              )
-    print("Kayıt Başarıyla eklendi")
-    i = 0
-    elif deger == 4:
-        while i < len(rehber)
-        print(rehber[i])
-        i += 1
-
-
-
-
-yn = input("Yeni Bir İşlem İstiyor musunuz?:(Y/N)")
-yn = yn.lower
-
-if yn == "n":
-    print("Güle Güle")
+                    }
+                    )
+            evethayir = str(input("\n Devam etmek istiyor musunuz?:(E/H)"))
+            if evethayir.upper() == "H":
+                print("""
+            *************
+            * Güle Güle *
+            *************
+                """)   
+            break
+    elif soru == "4": #KİŞİ ARAMA SEÇENEĞİ
+        for kisi in rehber:
+            name= input("Aramak istediğiniz İsmi Giriniz:")
+            if name in kisi["İsim"]:
+                print("ID:",kisi["Id"])
+                print("İsim:",kisi["İsim"])
+                print("Soyisim:",kisi["Soyisim"])
+                print("Telefon:",kisi["Telefon"])
+                print("Mail:",kisi["Mail"])
+                evethayir = str(input("\n Devam etmek istiyor musunuz?:(E/H)"))
+                if evethayir.upper() == "H":
+                    print("""
+                    *************
+                    * Güle Güle *
+                    *************
+                        """)
+                else:
+                    break
+            else:
+                print("Aradığınız Kayıt Bulunamadı")  
+                break

@@ -1,5 +1,5 @@
-from datetime import datetime
-from datetime import timedelta
+from datetime import datetime # tarih belirtir
+from datetime import timedelta # belirtilen tarihten girilen gün kadar öncesini yada sonrasını hesaplar
 
 class Employee:
     FirstName = ""

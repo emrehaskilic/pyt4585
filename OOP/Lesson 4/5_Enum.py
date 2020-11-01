@@ -7,6 +7,6 @@ class Color(Enum):
 
 print(Color.Blue)
 print(repr(Color.Blue)) #<Color.Blue: 2>
-print(Color.Red.name) # sınıfın isim değerini teslim alırsınız
+print(Color.Red.name) # sınıfın isim değerini teslim alırsınız #Red
 
-print(isinstance(Color.Red,Color))
+print(isinstance(Color.Red,Color)) # Color.Red, Color sınıfının bir elemanıdır  # True

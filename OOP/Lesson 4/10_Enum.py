@@ -13,7 +13,7 @@ class Renkler(Flag):      #enum           #flag
     Yesil = auto()        #5               #16
     Beyaz = auto()        #6               #32
     Turuncu = auto()      #7               #64
-    GokKusagi = Kirmizi | Mavi | Turuncu | Pembe
+    GokKusagi = Kirmizi | Mavi | Turuncu | Pembe # indeks değeri 77 dir
 #[<Renkler.Kirmizi: 1>, <Renkler.Sari: 2>, <Renkler.Mavi: 3>, <Renkler.Pembe: 4>, <Renkler.Yesil: 5>, <Renkler.Beyaz: 6>, <Renkler.Turuncu: 7>]
 liste = list(Renkler)
 

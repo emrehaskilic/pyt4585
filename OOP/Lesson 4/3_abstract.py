@@ -4,7 +4,7 @@ from abc import ABCMeta, abstractclassmethod
 
 class CoreEntity(metaclass=ABCMeta):
     __metaclass__ = ABCMeta
-    # @abstractclassmethod
+    @abstractclassmethod
     def Insert(self):
         print("Personelin Kaydı Eklendi")
 
@@ -30,3 +30,6 @@ personel.Insert() # CoreEntity sınıf içerisinde yer alan metod
 kategori = Kategori()
 
 kategori.Insert() # CoreEntity sınıf içerisinde yer alan metod
+
+
+#ÖNEMLİ => abstract metoduyla tanımladığınız bir fınksitonu başka bir classa miray verdiğinizde o fonsiyonu değiştirmek zorundasınız
